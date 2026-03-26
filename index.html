@@ -682,17 +682,7 @@
           </ul>
         </div>
 
-        <!-- Netlify Forms -->
-        <form
-          name="demo-request"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          id="demo-form"
-        >
-          <input type="hidden" name="form-name" value="demo-request" />
-          <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
-
+        <form id="demo-form">
           <div class="form-row">
             <div>
               <label for="first-name">First Name</label>
@@ -745,26 +735,40 @@
 
 
   <script>
-    // Netlify Forms AJAX submit — show inline success, no page reload
-    const form = document.getElementById('demo-form')
-    const success = document.getElementById('form-success')
+    const ENDPOINT = 'https://dyyzxaxwsqmxncwvrsmm.supabase.co/functions/v1/contact-form'
 
-    form.addEventListener('submit', function (e) {
+    const form    = document.getElementById('demo-form')
+    const success = document.getElementById('form-success')
+    const btn     = form.querySelector('button[type="submit"]')
+
+    form.addEventListener('submit', async function (e) {
       e.preventDefault()
-      const data = new FormData(form)
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
-      })
-        .then(() => {
-          form.querySelectorAll('input, textarea, button').forEach(el => el.disabled = true)
-          success.classList.add('visible')
-          form.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      btn.disabled = true
+      btn.textContent = 'Sending…'
+
+      const payload = {
+        firstName: form.querySelector('#first-name').value.trim(),
+        lastName:  form.querySelector('#last-name').value.trim(),
+        company:   form.querySelector('#company').value.trim(),
+        email:     form.querySelector('#email').value.trim(),
+        message:   form.querySelector('#message').value.trim() || undefined,
+      }
+
+      try {
+        const res = await fetch(ENDPOINT, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload),
         })
-        .catch(() => {
-          alert('Something went wrong. Please email us at support@worklineiq.com')
-        })
+        const json = await res.json()
+        if (!res.ok || !json.success) throw new Error(json.error || 'Unknown error')
+        form.style.display = 'none'
+        success.classList.add('visible')
+      } catch (err) {
+        btn.disabled = false
+        btn.textContent = 'Request a Demo'
+        alert('Something went wrong. Please email us at support@worklineiq.com')
+      }
     })
   </script>
 
