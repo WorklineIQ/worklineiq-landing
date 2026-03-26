@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorklineIQ — Field Intelligence for Utility Contractors</title>
+  <meta name="description" content="WorklineIQ replaces scattered paper tickets, texts, and spreadsheets with structured real-time data — from your field crews to your billing report." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1B2A4A;
+      --navy-dark: #111d33;
+      --blue:   #2E6BE6;
+      --blue-dark: #1f54c0;
+      --white:  #FFFFFF;
+      --gray-50:  #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-400: #94a3b8;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --radius: 10px;
+      --shadow: 0 4px 24px rgba(27,42,74,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(27, 42, 74, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: #6ea8fe; }
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--blue-dark); }
+
+    /* ── SECTIONS ── */
+    section { padding: 96px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .section-body {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      max-width: 680px;
+      margin-top: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      padding-top: 160px;
+      padding-bottom: 96px;
+      background: linear-gradient(160deg, var(--navy) 0%, #1e3560 55%, #213a6d 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -120px;
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(46,107,230,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(110,168,254,0.15);
+      border: 1px solid rgba(110,168,254,0.3);
+      color: #6ea8fe;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero-headline {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      max-width: 780px;
+    }
+    .hero-headline em {
+      font-style: normal;
+      color: #6ea8fe;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(255,255,255,0.72);
+      max-width: 640px;
+      margin-top: 20px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      margin-top: 36px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 8px;
+      transition: background 0.15s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+    .hero-trust {
+      margin-top: 56px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.8rem;
+    }
+    .hero-trust-divider {
+      width: 1px;
+      height: 14px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ── PROBLEM ── */
+    #problem { background: var(--gray-50); }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .problem-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .problem-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 18px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .problem-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: #fff5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .problem-item-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .problem-item-text span {
+      font-size: 0.83rem;
+      color: var(--gray-600);
+    }
+
+    /* ── HOW IT WORKS ── */
+    #how-it-works { background: var(--white); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 52px;
+      position: relative;
+    }
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 14px);
+      right: calc(12.5% + 14px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue) 0%, rgba(46,107,230,0.15) 100%);
+    }
+    .step {
+      position: relative;
+      text-align: center;
+      padding: 0 8px;
+    }
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--navy);
+    }
+    .step:first-child .step-num { background: var(--blue); box-shadow: 0 0 0 2px var(--blue); }
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .step-desc {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* ── VIDEO ── */
+    #video { background: var(--gray-50); }
+    .video-wrapper {
+      margin-top: 40px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(27,42,74,0.15);
+      background: var(--navy-dark);
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      max-width: 900px;
+    }
+    .video-placeholder {
+      text-align: center;
+      color: rgba(255,255,255,0.35);
+    }
+    .video-placeholder svg {
+      width: 56px; height: 56px;
+      margin-bottom: 12px;
+      color: rgba(255,255,255,0.2);
+    }
+    .video-placeholder p {
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── WHO IT'S FOR ── */
+    #who { background: var(--navy); }
+    #who h2 { color: var(--white); }
+    #who .section-label { color: #6ea8fe; }
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+    .who-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 28px 24px;
+      transition: background 0.2s;
+    }
+    .who-card:hover { background: rgba(255,255,255,0.09); }
+    .who-icon {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+    }
+    .who-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .who-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 72px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .contact-left h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .contact-left p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .contact-left ul {
+      list-style: none;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-left li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--gray-600);
+    }
+    .contact-left li::before {
+      content: '✓';
+      width: 20px;
+      height: 20px;
+      background: #e0edff;
+      color: var(--blue);
+      border-radius: 50%;
+      font-size: 0.7rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 5px;
+      letter-spacing: 0.01em;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--gray-900);
+      background: var(--white);
+      font-family: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(46,107,230,0.12);
+    }
+    textarea { resize: vertical; min-height: 100px; }
+    .form-submit { margin-top: 4px; }
+    .form-success {
+      display: none;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #15803d;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 14px 18px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .form-success.visible { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      padding: 36px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-logo {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+    .footer-logo span { color: #6ea8fe; }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .steps::before { display: none; }
+      .problem-grid { grid-template-columns: 1fr; gap: 40px; }
+      .who-grid { grid-template-columns: 1fr; gap: 16px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 72px 20px; }
+      #hero { padding-top: 120px; padding-bottom: 72px; }
+      .steps { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Workline<span>IQ</span></a>
+      <a href="#contact" class="nav-cta">Request a Demo</a>
+    </div>
+  </nav>
+
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-eyebrow">Field Intelligence for Utility Contractors</div>
+      <h1 class="hero-headline">One System.<br><em>From the Field</em><br>to Accounting.</h1>
+      <p class="hero-sub">WorklineIQ replaces scattered paper tickets, texts, and spreadsheets with structured real-time data — from your field crews to your billing report.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Request a Demo</a>
+      </div>
+      <div class="hero-trust">
+        <span>Built for utility contractors</span>
+        <div class="hero-trust-divider"></div>
+        <span>Offline-capable field app</span>
+        <div class="hero-trust-divider"></div>
+        <span>No IT team required</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── PROBLEM ── -->
+  <section id="problem">
+    <div class="container">
+      <p class="section-label">The Problem</p>
+      <h2>Your data exists.<br>It's just everywhere.</h2>
+      <p class="section-body">Running utility crews means managing a lot of moving pieces across a lot of job sites. When data is scattered across people, tools, and timelines, accuracy suffers. And when something does happen, you need data that's organized, accurate, and ready to back you up.</p>
+
+      <div class="problem-grid">
+        <div class="problem-list">
+          <div class="problem-item">
+            <div class="problem-icon">📋</div>
+            <div class="problem-item-text">
+              <strong>Paper tickets go missing or get misread</strong>
+              <span>Illegible handwriting and lost paperwork mean manual re-entry and guesswork at billing time.</span>
+            </div>
+          </div>
+          <div class="problem-item">
+            <div class="problem-icon">📱</div>
+            <div class="problem-item-text">
+              <strong>Field updates live in text threads</strong>
+              <span>Critical job info is buried in group chats, inaccessible to operations or accounting.</span>
+            </div>
+          </div>
+          <div class="problem-item">
+            <div class="problem-icon">📊</div>
+            <div class="problem-item-text">
+              <strong>Invoicing takes days instead of minutes</strong>
+              <span>Someone manually compiles spreadsheets from multiple sources every billing cycle.</span>
+            </div>
+          </div>
+          <div class="problem-item">
+            <div class="problem-icon">⚠️</div>
+            <div class="problem-item-text">
+              <strong>No audit trail when disputes arise</strong>
+              <span>Without timestamped, photo-backed records, defending your numbers is nearly impossible.</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="background: var(--navy); border-radius: 16px; padding: 40px; color: white;">
+            <p style="font-size: 2.4rem; font-weight: 900; line-height: 1; color: #6ea8fe; margin-bottom: 8px;">87%</p>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 28px;">of field data errors stem from manual transcription between the job site and the office.</p>
+            <p style="font-size: 2.4rem; font-weight: 900; line-height: 1; color: #6ea8fe; margin-bottom: 8px;">3–5 days</p>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 28px;">average delay between work completion and invoice generation for paper-based crews.</p>
+            <p style="font-size: 2.4rem; font-weight: 900; line-height: 1; color: #6ea8fe; margin-bottom: 8px;">$0</p>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7);">additional infrastructure required — WorklineIQ runs on the devices your crew already carries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── HOW IT WORKS ── -->
+  <section id="how-it-works">
+    <div class="container">
+      <p class="section-label">How It Works</p>
+      <h2>Simple by design.<br>Powerful by default.</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Load your job and pay items</div>
+          <p class="step-desc">Upload your job matrix once. WorklineIQ structures your pay items, locations, and crew assignments automatically.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Crews log actuals from the field</div>
+          <p class="step-desc">Offline-capable field app. Crews enter quantities, attach photos, and log equipment — even without cell service.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">Approve and generate your billing report</div>
+          <p class="step-desc">Review submissions in the approval queue. One click generates a complete, audit-ready billing report in seconds.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-title">Real-time job intelligence for the whole company</div>
+          <p class="step-desc">Operations, PMs, and finance all work from the same live data — no more chasing status updates across departments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── VIDEO ── -->
+  <section id="video">
+    <div class="container">
+      <p class="section-label">Product Demo</p>
+      <h2>See It In Action</h2>
+      <p class="section-body">Watch how a utility contractor manages field submissions, approvals, and billing in a single workflow.</p>
+
+      <div class="video-wrapper">
+        <!-- PASTE LOOM EMBED URL HERE -->
+        <div class="video-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+          </svg>
+          <p>Video coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── WHO IT'S FOR ── -->
+  <section id="who">
+    <div class="container">
+      <p class="section-label">Who It's For</p>
+      <h2>Built for the people<br>running utility work.</h2>
+
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="who-icon">🏗️</div>
+          <h3>PE-Backed Utility Contractors</h3>
+          <p>You have investors who expect operational clarity. WorklineIQ gives your back-office the structured data to report with confidence — and your field teams a system that doesn't slow them down.</p>
+        </div>
+        <div class="who-card">
+          <div class="who-icon">📡</div>
+          <h3>Operations Teams</h3>
+          <p>Done chasing field data? WorklineIQ surfaces real-time crew status, job progress, and equipment usage in one place — so you can manage the work instead of hunting for updates.</p>
+        </div>
+        <div class="who-card">
+          <div class="who-icon">💼</div>
+          <h3>Finance & Accounting Teams</h3>
+          <p>Clean, reliable numbers — every time. Approved field submissions flow directly into billing-ready reports. No re-entry, no reconciliation, no surprises at month-end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Request a Demo</p>
+      <h2>See WorklineIQ<br>at your scale.</h2>
+
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h3>What to expect</h3>
+          <p>A 30-minute walkthrough tailored to how your crews work — no generic demos, no pressure.</p>
+          <ul>
+            <li>Live product walkthrough</li>
+            <li>Q&amp;A with the team</li>
+            <li>Pricing tailored to your crew size</li>
+            <li>Setup timeline and onboarding plan</li>
+          </ul>
+        </div>
+
+        <!-- Netlify Forms -->
+        <form
+          name="demo-request"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          id="demo-form"
+        >
+          <input type="hidden" name="form-name" value="demo-request" />
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <div class="form-row">
+            <div>
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" placeholder="Jane" required />
+            </div>
+            <div>
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last_name" placeholder="Smith" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Acme Utilities LLC" required />
+          </div>
+
+          <div>
+            <label for="email">Work Email</label>
+            <input type="email" id="email" name="email" placeholder="jane@acmeutilities.com" required />
+          </div>
+
+          <div>
+            <label for="message">Anything you'd like us to know? <span style="font-weight:400;color:var(--gray-400)">(optional)</span></label>
+            <textarea id="message" name="message" placeholder="Crew size, current tools, specific challenges…"></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn-primary" style="width:100%;font-size:0.95rem;padding:14px;">Request a Demo</button>
+          </div>
+
+          <div class="form-success" id="form-success">
+            Thanks — we'll be in touch shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Workline<span>IQ</span></div>
+      <div class="footer-copy">© 2026 WorklineIQ. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="mailto:support@worklineiq.com">support@worklineiq.com</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Netlify Forms AJAX submit — show inline success, no page reload
+    const form = document.getElementById('demo-form')
+    const success = document.getElementById('form-success')
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault()
+      const data = new FormData(form)
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      })
+        .then(() => {
+          form.querySelectorAll('input, textarea, button').forEach(el => el.disabled = true)
+          success.classList.add('visible')
+          form.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+        })
+        .catch(() => {
+          alert('Something went wrong. Please email us at support@worklineiq.com')
+        })
+    })
+  </script>
+
+</body>
+</html>
