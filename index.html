@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WorklineIQ — Field Intelligence for Utility Contractors</title>
-  <meta name="description" content="WorklineIQ replaces scattered paper tickets, texts, and spreadsheets with structured real-time data — from your field crews to your billing report." />
+  <title>WorklineIQ — Accurate Field-to-Invoice for Utility Contractors</title>
+  <meta name="description" content="WorklineIQ captures what your crews complete in the field — structured against your actual pay items and contract rates — so your invoice reflects real work, not reconstructed estimates. Every quantity timestamped. Every line item defensible." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -54,13 +54,11 @@
       justify-content: space-between;
     }
     .nav-logo {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
       text-decoration: none;
     }
-    .nav-logo span { color: #6ea8fe; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
     .nav-cta {
       background: var(--blue);
       color: var(--white);
@@ -230,7 +228,7 @@
       color: var(--gray-600);
     }
 
-    /* ── HOW IT WORKS ── */
+    /* ── SOLUTION ── */
     #how-it-works { background: var(--white); }
     .steps {
       display: grid;
@@ -284,68 +282,56 @@
       line-height: 1.6;
     }
 
-    /* ── VIDEO ── */
-    #video { background: var(--gray-50); }
-    .video-wrapper {
-      margin-top: 40px;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 12px 48px rgba(27,42,74,0.15);
-      background: var(--navy-dark);
-      aspect-ratio: 16 / 9;
+    /* ── OUTCOMES ── */
+    #outcomes { background: var(--gray-50); }
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 52px;
+    }
+    .outcome-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+    .outcome-check {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #e0edff;
+      color: var(--blue);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      max-width: 900px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
-    .video-placeholder {
-      text-align: center;
-      color: rgba(255,255,255,0.35);
-    }
-    .video-placeholder svg {
-      width: 56px; height: 56px;
-      margin-bottom: 12px;
-      color: rgba(255,255,255,0.2);
-    }
-    .video-placeholder p {
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
-    }
-
-    /* ── WHO IT'S FOR ── */
-    #who { background: var(--navy); }
-    #who h2 { color: var(--white); }
-    #who .section-label { color: #6ea8fe; }
-    .who-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 52px;
-    }
-    .who-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      padding: 28px 24px;
-      transition: background 0.2s;
-    }
-    .who-card:hover { background: rgba(255,255,255,0.09); }
-    .who-icon {
-      font-size: 1.6rem;
-      margin-bottom: 14px;
-    }
-    .who-card h3 {
+    .outcome-item p {
       font-size: 1rem;
       font-weight: 700;
-      color: var(--white);
-      margin-bottom: 8px;
-      line-height: 1.3;
+      color: var(--navy);
+      line-height: 1.4;
+      margin: 0;
     }
-    .who-card p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.65;
+
+    /* ── SOFT CTA ── */
+    #soft-cta { background: var(--navy); text-align: center; }
+    #soft-cta h2 { color: var(--white); }
+    #soft-cta .section-label { color: #6ea8fe; }
+    .soft-cta-body {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin: 20px auto 36px;
+      line-height: 1.75;
     }
 
     /* ── CONTACT ── */
@@ -488,7 +474,7 @@
       .steps { grid-template-columns: repeat(2, 1fr); }
       .steps::before { display: none; }
       .problem-grid { grid-template-columns: 1fr; gap: 40px; }
-      .who-grid { grid-template-columns: 1fr; gap: 16px; }
+      .outcome-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     }
     @media (max-width: 600px) {
@@ -505,8 +491,8 @@
   <!-- ── NAV ── -->
   <nav>
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">Workline<span>IQ</span></a>
-      <a href="#contact" class="nav-cta">Request a Demo</a>
+      <a href="#hero" class="nav-logo"><img src="wordmark.svg" alt="WorklineIQ" /></a>
+      <a href="#contact" class="nav-cta">Request a Walkthrough</a>
     </div>
   </nav>
 
@@ -514,18 +500,16 @@
   <!-- ── HERO ── -->
   <section id="hero">
     <div class="container">
-      <div class="hero-eyebrow">Field Intelligence for Utility Contractors</div>
-      <h1 class="hero-headline">One System.<br><em>From the Field</em><br>to Accounting.</h1>
-      <p class="hero-sub">WorklineIQ replaces scattered paper tickets, texts, and spreadsheets with structured real-time data — from your field crews to your billing report.</p>
+      <div class="hero-eyebrow">Built for utility &amp; water contractors</div>
+      <h1 class="hero-headline">What your crews complete<br><em>is what you invoice.</em></h1>
+      <p class="hero-sub">WorklineIQ captures field production against your actual pay items and contract rates — so your invoice reflects what was completed, not what someone reconstructed from memory. Every quantity timestamped. Every line item you can stand behind.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Request a Demo</a>
+        <a href="#how-it-works" class="btn-primary">See how it works</a>
       </div>
       <div class="hero-trust">
-        <span>Built for utility contractors</span>
+        <span>No re-entry from paper tickets</span>
         <div class="hero-trust-divider"></div>
         <span>Offline-capable field app</span>
-        <div class="hero-trust-divider"></div>
-        <span>No IT team required</span>
       </div>
     </div>
   </section>
@@ -535,48 +519,46 @@
   <section id="problem">
     <div class="container">
       <p class="section-label">The Problem</p>
-      <h2>Your data exists.<br>It's just everywhere.</h2>
-      <p class="section-body">Running utility crews means managing a lot of moving pieces across a lot of job sites. When data is scattered across people, tools, and timelines, accuracy suffers. And when something does happen, you need data that's organized, accurate, and ready to back you up.</p>
+      <h2>Billing errors run both directions —<br>and most contractors can't prove either one</h2>
+      <p class="section-body">When field data lives in text threads, paper tickets, and memory, your invoice is only as accurate as whoever reconstructs it. Miss a pay item and you're underbilling. Round a quantity up and you're exposed on disputes. Push back on a line item without structured records and you're negotiating from memory, not evidence.</p>
 
       <div class="problem-grid">
         <div class="problem-list">
           <div class="problem-item">
             <div class="problem-icon">📋</div>
             <div class="problem-item-text">
-              <strong>Paper tickets go missing or get misread</strong>
-              <span>Illegible handwriting and lost paperwork mean manual re-entry and guesswork at billing time.</span>
+              <strong>Pay items that never make the invoice</strong>
+              <span>Work gets logged in a text or on a ticket and never makes it to billing. Nobody catches it until the check is short.</span>
             </div>
           </div>
           <div class="problem-item">
-            <div class="problem-icon">📱</div>
+            <div class="problem-icon">✏️</div>
             <div class="problem-item-text">
-              <strong>Field updates live in text threads</strong>
-              <span>Critical job info is buried in group chats, inaccessible to operations or accounting.</span>
-            </div>
-          </div>
-          <div class="problem-item">
-            <div class="problem-icon">📊</div>
-            <div class="problem-item-text">
-              <strong>Invoicing takes days instead of minutes</strong>
-              <span>Someone manually compiles spreadsheets from multiple sources every billing cycle.</span>
+              <strong>Quantities that get rounded the wrong way</strong>
+              <span>Manual re-entry from field tickets means estimating. Those estimates almost never round in your favor.</span>
             </div>
           </div>
           <div class="problem-item">
             <div class="problem-icon">⚠️</div>
             <div class="problem-item-text">
-              <strong>No audit trail when disputes arise</strong>
-              <span>Without timestamped, photo-backed records, defending your numbers is nearly impossible.</span>
+              <strong>Disputes you can't defend</strong>
+              <span>When a client pushes back on a line item, paper tickets and text threads aren't backup — they're evidence problems.</span>
+            </div>
+          </div>
+          <div class="problem-item">
+            <div class="problem-icon">⏳</div>
+            <div class="problem-item-text">
+              <strong>Cash sitting idle between billing cycles</strong>
+              <span>When compiling an invoice takes days of chasing and re-entry, money that should be collected keeps waiting.</span>
             </div>
           </div>
         </div>
         <div>
           <div style="background: var(--navy); border-radius: 16px; padding: 40px; color: white;">
-            <p style="font-size: 2.4rem; font-weight: 900; line-height: 1; color: #6ea8fe; margin-bottom: 8px;">87%</p>
-            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 28px;">of field data errors stem from manual transcription between the job site and the office.</p>
-            <p style="font-size: 2.4rem; font-weight: 900; line-height: 1; color: #6ea8fe; margin-bottom: 8px;">3–5 days</p>
-            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 28px;">average delay between work completion and invoice generation for paper-based crews.</p>
-            <p style="font-size: 2.4rem; font-weight: 900; line-height: 1; color: #6ea8fe; margin-bottom: 8px;">$0</p>
-            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7);">additional infrastructure required — WorklineIQ runs on the devices your crew already carries.</p>
+            <p style="font-size: 1rem; font-weight: 700; color: #6ea8fe; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em;">Where work disappears</p>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7;">The gap between what your crews do in the field and what ends up on an invoice is where revenue leaks. It's not a billing problem — it's a data capture problem.</p>
+            <p style="font-size: 1rem; font-weight: 700; color: #6ea8fe; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em;">You can't bill what you can't prove</p>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.7;">Clients dispute line items. Contracts have specific pay item requirements. Without structured, timestamped field records, you're negotiating instead of invoicing.</p>
           </div>
         </div>
       </div>
@@ -584,82 +566,74 @@
   </section>
 
 
-  <!-- ── HOW IT WORKS ── -->
+  <!-- ── SOLUTION ── -->
   <section id="how-it-works">
     <div class="container">
       <p class="section-label">How It Works</p>
-      <h2>Simple by design.<br>Powerful by default.</h2>
+      <h2>Structured data from the field.<br>Clean invoices from the office.</h2>
+      <p class="section-body">WorklineIQ gives your crews a simple field app tied to your actual job pay items and contract rates. They log quantities. You approve. The invoice calculates itself. No spreadsheets. No re-entry. No short billing.</p>
 
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <div class="step-title">Load your job and pay items</div>
-          <p class="step-desc">Upload your job matrix once. WorklineIQ structures your pay items, locations, and crew assignments automatically.</p>
+          <div class="step-title">Load your job pay items and rates</div>
+          <p class="step-desc">Upload your job matrix once. Pay items, contract rates, and locations are structured automatically — no manual setup on each job.</p>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-title">Crews log actuals from the field</div>
-          <p class="step-desc">Offline-capable field app. Crews enter quantities, attach photos, and log equipment — even without cell service.</p>
+          <p class="step-desc">Simple mobile app. Crews select the location, enter quantities against your actual pay items, and attach photos. Works offline.</p>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <div class="step-title">Approve and generate your billing report</div>
-          <p class="step-desc">Review submissions in the approval queue. One click generates a complete, audit-ready billing report in seconds.</p>
+          <div class="step-title">Review and approve in the office</div>
+          <p class="step-desc">Submissions hit an approval queue. Review actuals against planned quantities, flag questions, and approve in one step.</p>
         </div>
         <div class="step">
           <div class="step-num">4</div>
-          <div class="step-title">Real-time job intelligence for the whole company</div>
-          <p class="step-desc">Operations, PMs, and finance all work from the same live data — no more chasing status updates across departments.</p>
+          <div class="step-title">Invoice calculates itself</div>
+          <p class="step-desc">Approved quantities × contract rates = invoice line items. Generate billing-ready output without touching a spreadsheet.</p>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ── VIDEO ── -->
-  <section id="video">
+  <!-- ── OUTCOMES ── -->
+  <section id="outcomes">
     <div class="container">
-      <p class="section-label">Product Demo</p>
-      <h2>See It In Action</h2>
-      <p class="section-body">Watch how a utility contractor manages field submissions, approvals, and billing in a single workflow.</p>
+      <p class="section-label">What You Get</p>
+      <h2>The difference when field data<br>flows directly to billing</h2>
 
-      <div class="video-wrapper">
-        <!-- PASTE LOOM EMBED URL HERE -->
-        <div class="video-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
-          </svg>
-          <p>Video coming soon</p>
+      <div class="outcome-grid">
+        <div class="outcome-item">
+          <div class="outcome-check">✓</div>
+          <p>Invoice every pay item your crew actually completed</p>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-check">✓</div>
+          <p>Put together billing-ready output in minutes, not days</p>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-check">✓</div>
+          <p>Defend every line item with timestamped, field-verified records</p>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-check">✓</div>
+          <p>Operations and billing working from the same job record</p>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ── WHO IT'S FOR ── -->
-  <section id="who">
+  <!-- ── SOFT CTA ── -->
+  <section id="soft-cta">
     <div class="container">
-      <p class="section-label">Who It's For</p>
-      <h2>Built for the people<br>running utility work.</h2>
-
-      <div class="who-grid">
-        <div class="who-card">
-          <div class="who-icon">🏗️</div>
-          <h3>PE-Backed Utility Contractors</h3>
-          <p>You have investors who expect operational clarity. WorklineIQ gives your back-office the structured data to report with confidence — and your field teams a system that doesn't slow them down.</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon">📡</div>
-          <h3>Operations Teams</h3>
-          <p>Done chasing field data? WorklineIQ surfaces real-time crew status, job progress, and equipment usage in one place — so you can manage the work instead of hunting for updates.</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon">💼</div>
-          <h3>Finance & Accounting Teams</h3>
-          <p>Clean, reliable numbers — every time. Approved field submissions flow directly into billing-ready reports. No re-entry, no reconciliation, no surprises at month-end.</p>
-        </div>
-      </div>
+      <p class="section-label">See It On Your Job</p>
+      <h2>Give me one job</h2>
+      <p class="soft-cta-body">Show me your current workflow on one active job and I'll show you exactly what's not making it to your invoice.</p>
+      <a href="#contact" class="btn-primary">Request a walkthrough</a>
     </div>
   </section>
 
@@ -667,17 +641,17 @@
   <!-- ── CONTACT ── -->
   <section id="contact">
     <div class="container">
-      <p class="section-label">Request a Demo</p>
-      <h2>See WorklineIQ<br>at your scale.</h2>
+      <p class="section-label">Request a Walkthrough</p>
+      <h2>Walk through it on<br>one of your active jobs.</h2>
 
       <div class="contact-grid">
         <div class="contact-left">
           <h3>What to expect</h3>
-          <p>A 30-minute walkthrough tailored to how your crews work — no generic demos, no pressure.</p>
+          <p>A 30-minute walkthrough using your actual job structure — not a generic demo, not a pitch deck.</p>
           <ul>
-            <li>Live product walkthrough</li>
-            <li>Q&amp;A with the team</li>
-            <li>Pricing tailored to your crew size</li>
+            <li>Live walkthrough on your workflow</li>
+            <li>Direct Q&amp;A</li>
+            <li>Pricing based on your crew size</li>
             <li>Setup timeline and onboarding plan</li>
           </ul>
         </div>
@@ -710,7 +684,7 @@
           </div>
 
           <div class="form-submit">
-            <button type="submit" class="btn-primary" style="width:100%;font-size:0.95rem;padding:14px;">Request a Demo</button>
+            <button type="submit" class="btn-primary" style="width:100%;font-size:0.95rem;padding:14px;">Request a Walkthrough</button>
           </div>
         </form>
 
@@ -728,7 +702,7 @@
       <div class="footer-logo">Workline<span>IQ</span></div>
       <div class="footer-copy">© 2026 WorklineIQ. All rights reserved.</div>
       <div class="footer-links">
-        <a href="mailto:support@worklineiq.com">support@worklineiq.com</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </footer>
@@ -766,8 +740,8 @@
         success.classList.add('visible')
       } catch (err) {
         btn.disabled = false
-        btn.textContent = 'Request a Demo'
-        alert('Something went wrong. Please email us at support@worklineiq.com')
+        btn.textContent = 'Request a Walkthrough'
+        alert('Something went wrong. Please try again or use the contact link in the footer.')
       }
     })
   </script>
