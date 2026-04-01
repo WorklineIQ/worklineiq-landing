@@ -6,13 +6,5 @@
       "has": [{ "type": "host", "value": "worklineiq-landing.vercel.app" }],
       "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.worklineiq.com" }],
-      "destination": "https://worklineiq.com/$1",
-      "permanent": true
-    }
   ]
 }
