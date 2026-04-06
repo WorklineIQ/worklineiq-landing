@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security — WorklineIQ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --navy:#1e3a5f; --navy-dark:#16304f; --blue:#378ADD; --border:#e2e8f0; --bg:#f8fafc; }
+  body { font-family:'Inter','Calibri',sans-serif; background:var(--bg); color:#1a2433; line-height:1.7; font-size:15px; }
+  nav { background:var(--navy); padding:0 40px; display:flex; align-items:center; justify-content:space-between; height:60px; }
+  .nav-logo { display:flex; align-items:baseline; text-decoration:none; }
+  .nav-logo-w { color:#fff; font-family:Georgia,serif; font-size:22px; font-weight:700; letter-spacing:-0.5px; }
+  .nav-logo-iq { color:var(--blue); font-family:Georgia,serif; font-size:22px; font-weight:700; letter-spacing:-0.5px; }
+  .nav-link { color:rgba(255,255,255,0.65); font-size:13px; text-decoration:none; }
+  .nav-link:hover { color:#fff; }
+  .blue-bar { height:4px; background:var(--blue); }
+  .hero { background:var(--navy); padding:48px 40px 40px; text-align:center; }
+  .hero h1 { font-family:Georgia,serif; font-size:32px; font-weight:700; color:#fff; letter-spacing:-0.5px; margin-bottom:10px; }
+  .hero p { color:rgba(255,255,255,0.65); font-size:15px; max-width:540px; margin:0 auto; }
+  .container { max-width:780px; margin:0 auto; padding:52px 24px 80px; }
+
+  .callout { background:#EBF3FB; border:1.5px solid var(--blue); border-radius:8px; padding:16px 20px; margin-bottom:36px; font-size:14px; color:var(--navy); line-height:1.6; }
+  .callout strong { display:block; margin-bottom:4px; color:var(--blue); font-size:12px; text-transform:uppercase; letter-spacing:0.7px; }
+
+  .section { margin-bottom:40px; }
+  .section h2 { font-family:Georgia,serif; font-size:20px; font-weight:700; color:var(--navy); letter-spacing:-0.3px; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid var(--border); }
+
+  .security-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:0; }
+  .sec-card { background:#fff; border:1.5px solid var(--border); border-radius:9px; padding:20px 20px; }
+  .sec-card.highlight { border-color:var(--blue); border-left-width:4px; }
+  .sec-icon { font-size:22px; margin-bottom:8px; }
+  .sec-title { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:5px; }
+  .sec-body { font-size:13px; color:#334155; line-height:1.6; }
+  .sec-tag { display:inline-block; margin-top:8px; background:var(--navy); color:#fff; font-size:10px; font-weight:700; padding:2px 9px; border-radius:20px; letter-spacing:0.3px; }
+
+  .compliance-row { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:0; }
+  .comp-card { background:var(--navy); border-radius:9px; padding:20px; text-align:center; }
+  .comp-icon { font-size:26px; margin-bottom:8px; }
+  .comp-title { font-size:13px; font-weight:700; color:#fff; margin-bottom:5px; }
+  .comp-body { font-size:12px; color:rgba(255,255,255,0.65); line-height:1.5; }
+
+  .stack-table { width:100%; border-collapse:collapse; font-size:14px; }
+  .stack-table th { text-align:left; padding:10px 14px; background:var(--navy); color:#fff; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.6px; }
+  .stack-table td { padding:10px 14px; border-bottom:1px solid var(--border); color:#334155; vertical-align:top; }
+  .stack-table tr:last-child td { border-bottom:none; }
+  .stack-table tr:nth-child(even) td { background:#f8fafc; }
+  .stack-table td:first-child { font-weight:600; color:var(--navy); width:180px; }
+  .badge { display:inline-block; background:#EBF3FB; color:var(--blue); font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; margin-left:6px; vertical-align:middle; }
+
+  .divider { border:none; border-top:2px solid var(--border); margin:40px 0; }
+
+  .cta-card { background:var(--navy); border-radius:10px; padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+  .cta-card h3 { color:#fff; font-size:17px; margin-bottom:4px; }
+  .cta-card p { color:rgba(255,255,255,0.65); font-size:13px; }
+  .cta-card a { color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; }
+  .cta-card a:hover { text-decoration:underline; }
+
+  footer { background:var(--navy-dark); padding:20px 40px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-top:60px; }
+  footer span { color:rgba(255,255,255,0.4); font-size:12px; }
+  footer a { color:rgba(255,255,255,0.5); font-size:12px; text-decoration:none; }
+  footer a:hover { color:rgba(255,255,255,0.8); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span class="nav-logo-w">Workline</span><span class="nav-logo-iq">IQ</span></a>
+  <a href="/" class="nav-link">← Back to worklineiq.com</a>
+</nav>
+<div class="blue-bar"></div>
+
+<div class="hero">
+  <h1>Security</h1>
+  <p>How WorklineIQ protects your company's field data, from the database to the device.</p>
+</div>
+
+<div class="container">
+
+  <div class="callout">
+    <strong>Our commitment</strong>
+    Your data belongs to you. We process it on your behalf using industry-standard security controls. We don't sell it, share it with advertisers, or use it for any purpose outside of delivering the platform to your team.
+  </div>
+
+  <!-- Security Controls -->
+  <div class="section">
+    <h2>Security Controls</h2>
+    <div class="security-grid">
+      <div class="sec-card highlight">
+        <div class="sec-icon">&#128274;</div>
+        <div class="sec-title">Row-Level Security (RLS)</div>
+        <div class="sec-body">Enabled on every database table. Your company's data is isolated at the database level — no query can return another tenant's records. Data isolation is enforced by the database, not just the application layer.</div>
+        <span class="sec-tag">Database-enforced</span>
+      </div>
+      <div class="sec-card highlight">
+        <div class="sec-icon">&#128272;</div>
+        <div class="sec-title">Encryption in Transit</div>
+        <div class="sec-body">All communication between your devices and our servers is encrypted via TLS 1.2 or higher. HTTPS is enforced across all endpoints. No data travels unencrypted.</div>
+        <span class="sec-tag">TLS 1.2+</span>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">&#128190;</div>
+        <div class="sec-title">Encryption at Rest</div>
+        <div class="sec-body">All stored data is encrypted using AES-256, managed at the infrastructure level by Supabase. This includes the database, backups, and file storage.</div>
+        <span class="sec-tag">AES-256</span>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">&#128100;</div>
+        <div class="sec-title">Role-Based Access Control</div>
+        <div class="sec-body">25+ granular permission flags control what each user role can see and do. Permissions are enforced server-side via database triggers — not just in the UI.</div>
+        <span class="sec-tag">Server-side enforced</span>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">&#128273;</div>
+        <div class="sec-title">Authentication & Sessions</div>
+        <div class="sec-body">Admin and office users authenticate via Supabase Auth with JWT tokens (1-hour expiry). Field crew access uses server-side PIN validation — no personal accounts or email addresses required.</div>
+        <span class="sec-tag">JWT + PIN</span>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">&#128241;</div>
+        <div class="sec-title">Offline Data Handling</div>
+        <div class="sec-body">Field entries queued offline are stored locally in IndexedDB on the device. The queue syncs automatically when connectivity is restored and is cleared upon logout.</div>
+        <span class="sec-tag">Cleared on logout</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compliance -->
+  <div class="section">
+    <h2>Compliance & Certifications</h2>
+    <div class="compliance-row">
+      <div class="comp-card">
+        <div class="comp-icon">&#128203;</div>
+        <div class="comp-title">SOC 2 Type II</div>
+        <div class="comp-body">Supabase, our backend infrastructure provider, holds SOC 2 Type II certification. Certification documentation available on request.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-icon">&#127758;</div>
+        <div class="comp-title">GDPR-Ready</div>
+        <div class="comp-body">Our data architecture is designed for GDPR compliance. Customer data is exportable and deletable at any time on request.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-icon">&#128196;</div>
+        <div class="comp-title">Data Ownership</div>
+        <div class="comp-body">You own all data submitted to WorklineIQ. It is exportable in full at any time, including within 30 days after account termination.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Infrastructure Stack -->
+  <div class="section">
+    <h2>Infrastructure Stack</h2>
+    <table class="stack-table">
+      <thead>
+        <tr><th>Component</th><th>Provider / Detail</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Frontend hosting</td><td>Vercel — global edge network, HTTPS enforced</td></tr>
+        <tr><td>Backend & database</td><td>Supabase — managed PostgreSQL <span class="badge">SOC 2 Type II</span></td></tr>
+        <tr><td>Authentication</td><td>Supabase Auth — JWT sessions, 1-hour token expiry</td></tr>
+        <tr><td>Database isolation</td><td>Row-Level Security on every table</td></tr>
+        <tr><td>Encryption at rest</td><td>AES-256, infrastructure-managed by Supabase</td></tr>
+        <tr><td>Encryption in transit</td><td>TLS 1.2+ on all endpoints</td></tr>
+        <tr><td>Field crew auth</td><td>Server-side PIN validation, 7-day JWT for field sessions</td></tr>
+        <tr><td>Offline storage</td><td>IndexedDB — synced on reconnect, cleared on logout</td></tr>
+        <tr><td>Uptime target</td><td>99.9% per calendar month (Vercel + Supabase SLAs)</td></tr>
+        <tr><td>Data residency</td><td>United States</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <div class="cta-card">
+    <div>
+      <h3>Security questionnaire or IT review?</h3>
+      <p>We're happy to complete vendor security questionnaires, provide architecture documentation, or schedule a technical review call with your IT team.</p>
+    </div>
+    <div style="text-align:right;">
+      <a href="mailto:don@worklineiq.com?subject=Security Questionnaire">don@worklineiq.com</a>
+      <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:4px;">worklineiq.com</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span>&copy; 2026 WorklineIQ &nbsp;&middot;&nbsp; worklineiq.com</span>
+  <div style="display:flex;gap:20px;">
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/security">Security</a>
+  </div>
+  <span>All rights reserved.</span>
+</footer>
+
+<script>
+(function () {
+  if (localStorage.getItem('wiq_cookie_ok') === '1') return;
+  var NAVY = '#1e3a5f', BLUE = '#378ADD';
+  var banner = document.createElement('div');
+  banner.id = 'wiq-cookie-banner';
+  banner.setAttribute('role', 'region');
+  banner.setAttribute('aria-label', 'Cookie notice');
+  banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:99999;background:' + NAVY + ';color:#fff;font-family:Inter,Calibri,sans-serif;font-size:14px;line-height:1.5;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -2px 12px rgba(0,0,0,0.2);border-top:3px solid ' + BLUE;
+  banner.innerHTML = '<span style="flex:1;min-width:200px;">WorklineIQ uses strictly necessary cookies and local storage to keep you signed in and the platform running. We don\'t use advertising or tracking cookies. <a href="/privacy#cookies" style="color:' + BLUE + ';text-decoration:underline;margin-left:4px;">Learn more</a></span><button id="wiq-cookie-ok" aria-label="Acknowledge cookie notice" style="background:' + BLUE + ';color:#fff;border:none;border-radius:6px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:Inter,Calibri,sans-serif;flex-shrink:0;">Got it</button>';
+  function init() {
+    document.body.appendChild(banner);
+    document.getElementById('wiq-cookie-ok').addEventListener('click', function () {
+      localStorage.setItem('wiq_cookie_ok', '1');
+      banner.style.transition = 'opacity 0.3s';
+      banner.style.opacity = '0';
+      setTimeout(function () { banner.remove(); }, 300);
+    });
+  }
+  if (document.readyState !== 'loading') init();
+  else document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+
+</body>
+</html>

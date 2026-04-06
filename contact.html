@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — WorklineIQ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --navy:#1e3a5f; --navy-dark:#16304f; --blue:#378ADD; --border:#e2e8f0; --bg:#f8fafc; }
+  body { font-family:'Inter','Calibri',sans-serif; background:var(--bg); color:#1a2433; line-height:1.7; font-size:15px; }
+  nav { background:var(--navy); padding:0 40px; display:flex; align-items:center; justify-content:space-between; height:60px; }
+  .nav-logo { display:flex; align-items:baseline; text-decoration:none; }
+  .nav-logo-w { color:#fff; font-family:Georgia,serif; font-size:22px; font-weight:700; letter-spacing:-0.5px; }
+  .nav-logo-iq { color:var(--blue); font-family:Georgia,serif; font-size:22px; font-weight:700; letter-spacing:-0.5px; }
+  .nav-link { color:rgba(255,255,255,0.65); font-size:13px; text-decoration:none; }
+  .nav-link:hover { color:#fff; }
+  .blue-bar { height:4px; background:var(--blue); }
+  .hero { background:var(--navy); padding:48px 40px 40px; text-align:center; }
+  .hero h1 { font-family:Georgia,serif; font-size:32px; font-weight:700; color:#fff; letter-spacing:-0.5px; margin-bottom:10px; }
+  .hero p { color:rgba(255,255,255,0.65); font-size:15px; max-width:520px; margin:0 auto; }
+  .container { max-width:760px; margin:0 auto; padding:52px 24px 80px; }
+
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:40px; }
+  .contact-card {
+    background:#fff;
+    border:1.5px solid var(--border);
+    border-radius:10px;
+    padding:28px 28px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .contact-card.primary { border-color:var(--blue); border-width:2px; }
+  .card-icon { font-size:28px; margin-bottom:4px; }
+  .card-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:var(--blue); }
+  .card-title { font-family:Georgia,serif; font-size:19px; font-weight:700; color:var(--navy); letter-spacing:-0.3px; }
+  .card-body { font-size:14px; color:#64748b; line-height:1.6; }
+  .card-action { margin-top:8px; }
+  .card-action a {
+    display:inline-block;
+    background:var(--navy);
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    padding:10px 22px;
+    border-radius:6px;
+    transition:background 0.2s;
+  }
+  .card-action a:hover { background:var(--blue); }
+  .card-action a.secondary {
+    background:transparent;
+    color:var(--navy);
+    border:1.5px solid var(--navy);
+  }
+  .card-action a.secondary:hover { background:var(--navy); color:#fff; }
+
+  .divider { border:none; border-top:2px solid var(--border); margin:40px 0; }
+
+  .faq { margin-bottom:40px; }
+  .faq h2 { font-family:Georgia,serif; font-size:21px; font-weight:700; color:var(--navy); letter-spacing:-0.3px; margin-bottom:20px; padding-bottom:8px; border-bottom:2px solid var(--border); }
+  .faq-item { margin-bottom:20px; }
+  .faq-item h3 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:5px; }
+  .faq-item p { font-size:14px; color:#334155; line-height:1.65; }
+  .faq-item a { color:var(--blue); text-decoration:none; }
+  .faq-item a:hover { text-decoration:underline; }
+
+  .response-bar {
+    background:var(--navy);
+    border-radius:10px;
+    padding:20px 28px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .response-bar .rb-icon { font-size:28px; flex-shrink:0; }
+  .response-bar h3 { color:#fff; font-size:16px; margin-bottom:3px; }
+  .response-bar p { color:rgba(255,255,255,0.65); font-size:13px; }
+
+  footer { background:var(--navy-dark); padding:20px 40px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-top:60px; }
+  footer span { color:rgba(255,255,255,0.4); font-size:12px; }
+  footer a { color:rgba(255,255,255,0.5); font-size:12px; text-decoration:none; }
+  footer a:hover { color:rgba(255,255,255,0.8); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span class="nav-logo-w">Workline</span><span class="nav-logo-iq">IQ</span></a>
+  <a href="/" class="nav-link">← Back to worklineiq.com</a>
+</nav>
+<div class="blue-bar"></div>
+
+<div class="hero">
+  <h1>Contact Us</h1>
+  <p>Questions about the platform, pricing, or a demo? We respond fast — usually same business day.</p>
+</div>
+
+<div class="container">
+
+  <div class="contact-grid">
+    <div class="contact-card primary">
+      <div class="card-icon">&#128233;</div>
+      <div class="card-label">General Inquiries & Sales</div>
+      <div class="card-title">Send us an email</div>
+      <div class="card-body">Best for pricing questions, demo requests, or anything about the platform. You'll hear back from Don directly.</div>
+      <div class="card-action">
+        <a href="mailto:don@worklineiq.com">don@worklineiq.com</a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="card-icon">&#128247;</div>
+      <div class="card-label">See It First</div>
+      <div class="card-title">Request a demo</div>
+      <div class="card-body">30 minutes. We'll walk through field entry, approval workflows, and pay app generation with your type of work in mind.</div>
+      <div class="card-action">
+        <a href="mailto:don@worklineiq.com?subject=Demo Request" class="secondary">Schedule a demo</a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="card-icon">&#128736;</div>
+      <div class="card-label">Existing Customers</div>
+      <div class="card-title">Customer support</div>
+      <div class="card-body">If you're an active WorklineIQ customer and need help, reach out directly. Your onboarding specialist is your first point of contact.</div>
+      <div class="card-action">
+        <a href="mailto:don@worklineiq.com?subject=Support" class="secondary">Get support</a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="card-icon">&#128274;</div>
+      <div class="card-label">Security & Privacy</div>
+      <div class="card-title">Security inquiries</div>
+      <div class="card-body">For security questionnaires, vulnerability reports, or data privacy questions. We take these seriously and respond promptly.</div>
+      <div class="card-action">
+        <a href="mailto:don@worklineiq.com?subject=Security Inquiry" class="secondary">Contact security</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="faq">
+    <h2>Common Questions</h2>
+    <div class="faq-item">
+      <h3>How long does a demo take?</h3>
+      <p>About 30 minutes. We cover field entry capture, the approval workflow, and pay app generation. If you want to go deeper on a specific area — equipment tracking, reporting, crew setup — we can extend or schedule a follow-up.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What does WorklineIQ cost?</h3>
+      <p>We price on a flat annual fee by user tier — not per crew seat. Packages start at the Essential level and scale up to Professional and Executive. <a href="mailto:don@worklineiq.com?subject=Pricing Question">Contact us</a> for a quote based on your team size and needs. Pilot pricing is available for a 90-day trial.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does implementation take?</h3>
+      <p>Typically 2–4 weeks from contract signing to go-live. We handle the configuration, data import, and crew onboarding alongside you. Most customers run a 2-week parallel period before fully switching over. See our <a href="/onboarding">implementation overview</a> for the full picture.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do field crews need email addresses or personal accounts?</h3>
+      <p>No. Field crew access works via QR code and PIN — no email address required. Crews are typically set up and submitting same-day. Admin and office users have standard accounts.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Where is WorklineIQ based?</h3>
+      <p>Wisconsin. We work with utility and fiber contractors across the Midwest and beyond.</p>
+    </div>
+  </div>
+
+  <div class="response-bar">
+    <div class="rb-icon">&#9889;</div>
+    <div>
+      <h3>We respond same business day.</h3>
+      <p>Reach us at <a href="mailto:don@worklineiq.com" style="color:var(--blue);text-decoration:none;font-weight:600;">don@worklineiq.com</a> &nbsp;&middot;&nbsp; worklineiq.com</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span>&copy; 2026 WorklineIQ &nbsp;&middot;&nbsp; worklineiq.com</span>
+  <div style="display:flex;gap:20px;">
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/security">Security</a>
+  </div>
+  <span>All rights reserved.</span>
+</footer>
+
+<script>
+(function () {
+  if (localStorage.getItem('wiq_cookie_ok') === '1') return;
+  var NAVY = '#1e3a5f', BLUE = '#378ADD';
+  var banner = document.createElement('div');
+  banner.id = 'wiq-cookie-banner';
+  banner.setAttribute('role', 'region');
+  banner.setAttribute('aria-label', 'Cookie notice');
+  banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:99999;background:' + NAVY + ';color:#fff;font-family:Inter,Calibri,sans-serif;font-size:14px;line-height:1.5;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -2px 12px rgba(0,0,0,0.2);border-top:3px solid ' + BLUE;
+  banner.innerHTML = '<span style="flex:1;min-width:200px;">WorklineIQ uses strictly necessary cookies and local storage to keep you signed in and the platform running. We don\'t use advertising or tracking cookies. <a href="/privacy#cookies" style="color:' + BLUE + ';text-decoration:underline;margin-left:4px;">Learn more</a></span><button id="wiq-cookie-ok" aria-label="Acknowledge cookie notice" style="background:' + BLUE + ';color:#fff;border:none;border-radius:6px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:Inter,Calibri,sans-serif;flex-shrink:0;">Got it</button>';
+  function init() {
+    document.body.appendChild(banner);
+    document.getElementById('wiq-cookie-ok').addEventListener('click', function () {
+      localStorage.setItem('wiq_cookie_ok', '1');
+      banner.style.transition = 'opacity 0.3s';
+      banner.style.opacity = '0';
+      setTimeout(function () { banner.remove(); }, 300);
+    });
+  }
+  if (document.readyState !== 'loading') init();
+  else document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+
+</body>
+</html>
