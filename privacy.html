@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — WorklineIQ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --navy: #1e3a5f;
+    --navy-dark: #16304f;
+    --blue: #378ADD;
+    --white: #fff;
+    --text: #1a2433;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+  }
+  body {
+    font-family: 'Inter', 'Calibri', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo { display: flex; align-items: baseline; gap: 0; text-decoration: none; }
+  .nav-logo-w { color: #fff; font-family: Georgia, serif; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .nav-logo-iq { color: var(--blue); font-family: Georgia, serif; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .nav-link { color: rgba(255,255,255,0.65); font-size: 13px; text-decoration: none; }
+  .nav-link:hover { color: #fff; }
+  .blue-bar { height: 4px; background: var(--blue); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    padding: 48px 40px 40px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+  .hero p { color: rgba(255,255,255,0.65); font-size: 14px; }
+  .hero .updated { color: var(--blue); font-size: 13px; margin-top: 8px; font-weight: 500; }
+
+  /* LAYOUT */
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* TOC */
+  .toc {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-left: 4px solid var(--blue);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+  .toc-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--blue); margin-bottom: 12px; }
+  .toc ol { padding-left: 18px; }
+  .toc li { margin-bottom: 5px; }
+  .toc a { color: var(--navy); font-size: 14px; text-decoration: none; font-weight: 500; }
+  .toc a:hover { color: var(--blue); text-decoration: underline; }
+
+  /* SECTIONS */
+  .section { margin-bottom: 40px; }
+  .section h2 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.3px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 18px 0 6px;
+  }
+  .section p { color: #334155; margin-bottom: 12px; font-size: 15px; line-height: 1.7; }
+  .section ul, .section ol { padding-left: 20px; margin-bottom: 12px; }
+  .section li { color: #334155; font-size: 15px; line-height: 1.6; margin-bottom: 5px; }
+
+  /* CALLOUT BOX */
+  .callout {
+    background: #EBF3FB;
+    border: 1.5px solid var(--blue);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: var(--navy);
+    line-height: 1.6;
+  }
+  .callout strong { display: block; margin-bottom: 4px; color: var(--blue); font-size: 12px; text-transform: uppercase; letter-spacing: 0.7px; }
+
+  /* CONTACT CARD */
+  .contact-card {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .contact-card h3 { color: #fff; font-size: 17px; margin-bottom: 4px; }
+  .contact-card p { color: rgba(255,255,255,0.7); font-size: 13px; }
+  .contact-card a { color: var(--blue); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-dark);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  footer span { color: rgba(255,255,255,0.4); font-size: 12px; }
+  footer a { color: rgba(255,255,255,0.5); font-size: 12px; text-decoration: none; }
+  footer a:hover { color: rgba(255,255,255,0.8); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-logo-w">Workline</span><span class="nav-logo-iq">IQ</span>
+  </a>
+  <a href="/" class="nav-link">← Back to worklineiq.com</a>
+</nav>
+<div class="blue-bar"></div>
+
+<div class="hero">
+  <h1>Privacy Policy</h1>
+  <p>How WorklineIQ collects, uses, and protects your information.</p>
+  <div class="updated">Effective Date: April 1, 2026</div>
+</div>
+
+<div class="container">
+
+  <div class="callout">
+    <strong>The short version</strong>
+    WorklineIQ is a B2B platform. We collect only what we need to provide the service. You own your data. We do not sell it, share it with advertisers, or use it for any purpose other than running your account. Field crew data stays within your company's account.
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#who-we-are">Who We Are</a></li>
+      <li><a href="#information-we-collect">Information We Collect</a></li>
+      <li><a href="#how-we-use">How We Use Your Information</a></li>
+      <li><a href="#data-sharing">Data Sharing & Disclosure</a></li>
+      <li><a href="#data-ownership">Data Ownership & Portability</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#cookies">Cookies & Tracking</a></li>
+      <li><a href="#field-crew">Field Crew Users</a></li>
+      <li><a href="#your-rights">Your Rights</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="section" id="who-we-are">
+    <h2>1. Who We Are</h2>
+    <p>WorklineIQ ("we," "us," or "our") provides a cloud-based field production and billing intelligence platform for utility and fiber contractors. Our platform is accessible at <strong>worklineiq.com</strong> and through our web application.</p>
+    <p>This Privacy Policy applies to information we collect when you use our website, platform, and related services (collectively, the "Services"). It does not apply to information our customers collect from their own end users — customers are responsible for their own privacy practices with respect to data they collect through our platform.</p>
+    <p>For questions about this policy, contact us at <strong>don@worklineiq.com</strong>.</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="section" id="information-we-collect">
+    <h2>2. Information We Collect</h2>
+
+    <h3>Account & Contact Information</h3>
+    <p>When a company subscribes to WorklineIQ, we collect information about the company and its designated administrators, including:</p>
+    <ul>
+      <li>Company name, address, and contact information</li>
+      <li>Administrator name, email address, and phone number</li>
+      <li>Billing contact and payment information (processed by our payment provider; we do not store full payment card details)</li>
+    </ul>
+
+    <h3>Platform Data</h3>
+    <p>We collect and store data submitted by your organization through the platform, including:</p>
+    <ul>
+      <li>Job records, location data, pay items, and contract information</li>
+      <li>Field production entries submitted by crew members</li>
+      <li>Approval records, pay application data, and invoices</li>
+      <li>Equipment records, purchase orders, and materials data</li>
+      <li>Photos attached to field submissions</li>
+    </ul>
+    <p>This data belongs to your organization. See Section 5 (Data Ownership) for details.</p>
+
+    <h3>Usage & Technical Data</h3>
+    <p>We automatically collect certain technical information when you use our Services, including:</p>
+    <ul>
+      <li>IP addresses and device identifiers</li>
+      <li>Browser type, operating system, and device type</li>
+      <li>Pages visited, features used, and actions taken within the platform</li>
+      <li>Error logs and performance data</li>
+    </ul>
+    <p>This information is used to maintain, improve, and secure our platform.</p>
+
+    <h3>Communications</h3>
+    <p>If you contact us by email or through our website, we retain the content of those communications to respond to your inquiry and improve our support.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="section" id="how-we-use">
+    <h2>3. How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Provide, operate, and maintain the WorklineIQ platform</li>
+      <li>Process transactions and send related communications (invoices, receipts, service notices)</li>
+      <li>Respond to support requests and customer inquiries</li>
+      <li>Monitor and analyze platform usage to improve performance and features</li>
+      <li>Detect, investigate, and prevent security incidents and fraudulent activity</li>
+      <li>Comply with legal obligations</li>
+    </ul>
+    <p>We do not use your data to serve advertisements. We do not sell your data to third parties. We do not use your platform data to train AI models or build products for third parties.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="section" id="data-sharing">
+    <h2>4. Data Sharing & Disclosure</h2>
+    <p>We do not sell, rent, or trade your information. We share data only in the following limited circumstances:</p>
+
+    <h3>Service Providers (Subprocessors)</h3>
+    <p>We use a limited number of third-party providers to help deliver our Services. These providers access your data only to perform services on our behalf and are bound by confidentiality obligations. Our primary infrastructure providers include:</p>
+    <ul>
+      <li><strong>Supabase</strong> — database hosting, authentication, and storage (SOC 2 Type II certified)</li>
+      <li><strong>Vercel</strong> — frontend hosting and content delivery</li>
+    </ul>
+
+    <h3>Legal Requirements</h3>
+    <p>We may disclose information if required to do so by law, court order, or governmental authority, or if we believe in good faith that disclosure is necessary to protect the rights, property, or safety of WorklineIQ, our customers, or others.</p>
+
+    <h3>Business Transfers</h3>
+    <p>In the event of a merger, acquisition, or sale of all or substantially all of our assets, customer data may be transferred as part of that transaction. We will notify affected customers prior to any such transfer.</p>
+
+    <h3>With Your Consent</h3>
+    <p>We may share information in other circumstances with your explicit consent.</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="section" id="data-ownership">
+    <h2>5. Data Ownership & Portability</h2>
+    <div class="callout">
+      <strong>Your data is yours</strong>
+      Customer organizations own all data submitted to WorklineIQ. We hold it as a processor on your behalf. You can export your data at any time, and we will return or delete it upon termination of your account.
+    </div>
+    <p>You may export your company's data at any time using the export functionality within the platform. Upon termination of your account, we will make your data available for export for 30 days, after which it will be deleted from our systems.</p>
+    <p>We do not claim any ownership interest in your field data, contract data, job records, or any other customer-submitted content.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="section" id="security">
+    <h2>6. Security</h2>
+    <p>We implement industry-standard technical and organizational measures to protect your data, including:</p>
+    <ul>
+      <li><strong>Encryption in transit:</strong> All data transmitted between your devices and our servers is encrypted via TLS 1.2 or higher.</li>
+      <li><strong>Encryption at rest:</strong> All stored data is encrypted using AES-256, managed by Supabase at the infrastructure level.</li>
+      <li><strong>Row-Level Security:</strong> Our database enforces strict data isolation — your company's data is never accessible to other customers at the database level.</li>
+      <li><strong>Authentication:</strong> Admin and office users authenticate via Supabase Auth with JWT tokens. Field crew access uses server-side PIN validation.</li>
+      <li><strong>Access controls:</strong> Role-based permissions with 25+ granular flags limit access to only what each user role requires.</li>
+    </ul>
+    <p>No method of transmission or storage is 100% secure. If you have reason to believe your account has been compromised, contact us immediately at <strong>don@worklineiq.com</strong>.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="section" id="retention">
+    <h2>7. Data Retention</h2>
+    <p>We retain your data for as long as your account is active. Upon termination:</p>
+    <ul>
+      <li>Customer data remains available for export for 30 days following termination.</li>
+      <li>After 30 days, customer data is deleted from our production systems.</li>
+      <li>Backup copies may persist for up to 90 days before being fully purged.</li>
+      <li>Billing records and communications may be retained for up to 7 years for legal and accounting purposes.</li>
+    </ul>
+  </div>
+
+  <!-- 8 -->
+  <div class="section" id="cookies">
+    <h2>8. Cookies & Tracking</h2>
+    <p>Our platform uses a minimal set of cookies and local storage necessary to operate the service, including:</p>
+    <ul>
+      <li><strong>Authentication tokens:</strong> To keep you logged in during your session.</li>
+      <li><strong>Session preferences:</strong> To remember your in-app settings.</li>
+      <li><strong>Offline queue:</strong> Field entry data is temporarily stored in IndexedDB on your device when offline. This data is synced and cleared upon logout.</li>
+    </ul>
+    <p>We do not use third-party advertising cookies or tracking pixels. We do not participate in cross-site behavioral advertising networks.</p>
+    <p>Our website may use basic analytics (such as page view counts) to understand how visitors use worklineiq.com. If we add analytics tools, we will update this policy accordingly.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="section" id="field-crew">
+    <h2>9. Field Crew Users</h2>
+    <p>WorklineIQ supports field crew access via QR code and PIN — no email address or personal account is required for field-level users. Field crew accounts are created and managed by the subscribing company (the employer), not by individual crew members.</p>
+    <p>Field crew data — including daily production entries, locations, and photos — is submitted on behalf of the employer and is governed by the employer's use of the platform. Crew members should direct any questions about their data to their employer.</p>
+    <p>WorklineIQ does not independently collect or use field crew personal data beyond what is submitted through the platform by the employer.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="section" id="your-rights">
+    <h2>10. Your Rights</h2>
+    <p>Depending on your location, you may have certain rights with respect to your personal information, including the right to:</p>
+    <ul>
+      <li>Access the personal information we hold about you</li>
+      <li>Request correction of inaccurate information</li>
+      <li>Request deletion of your information (subject to our retention obligations)</li>
+      <li>Export your data in a portable format</li>
+      <li>Object to or restrict certain processing of your data</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <strong>don@worklineiq.com</strong>. We will respond within 30 days. Note that many of these rights are fulfilled at the account level — company administrators can access, correct, and export their organization's data directly through the platform.</p>
+    <p>WorklineIQ is operated from the United States. If you are located outside the United States, please be aware that your information may be transferred to and processed in the United States.</p>
+  </div>
+
+  <!-- 11 -->
+  <div class="section" id="children">
+    <h2>11. Children's Privacy</h2>
+    <p>WorklineIQ is a business-to-business platform intended for use by companies and their employees. We do not knowingly collect personal information from individuals under the age of 18. If you believe we have inadvertently collected such information, contact us and we will delete it promptly.</p>
+  </div>
+
+  <!-- 12 -->
+  <div class="section" id="changes">
+    <h2>12. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make material changes, we will notify active customers by email and update the effective date at the top of this page. Your continued use of the Services after any update constitutes acceptance of the revised policy.</p>
+    <p>We encourage you to review this policy periodically.</p>
+  </div>
+
+  <!-- 13 -->
+  <div class="section" id="contact">
+    <h2>13. Contact Us</h2>
+    <p>If you have questions, concerns, or requests related to this Privacy Policy or our data practices, please contact us:</p>
+  </div>
+
+  <div class="contact-card">
+    <div>
+      <h3>WorklineIQ Privacy Contact</h3>
+      <p>We aim to respond to all privacy inquiries within 5 business days.</p>
+    </div>
+    <div>
+      <a href="mailto:don@worklineiq.com">don@worklineiq.com</a><br>
+      <span style="color:rgba(255,255,255,0.5); font-size:13px;">worklineiq.com</span>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <span>© 2026 WorklineIQ &nbsp;·&nbsp; worklineiq.com</span>
+  <div style="display:flex; gap:20px;">
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+  </div>
+  <span>All rights reserved.</span>
+</footer>
+
+</body>
+</html>
