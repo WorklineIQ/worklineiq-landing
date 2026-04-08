@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="55%" style="stop-color:#162d4a"/>
+      <stop offset="100%" style="stop-color:#0f2035"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="85%" cy="10%" r="35%">
+      <stop offset="0%" style="stop-color:rgba(55,138,221,0.2)"/>
+      <stop offset="100%" style="stop-color:rgba(55,138,221,0)"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="10%" cy="90%" r="25%">
+      <stop offset="0%" style="stop-color:rgba(55,138,221,0.1)"/>
+      <stop offset="100%" style="stop-color:rgba(55,138,221,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#orb1)"/>
+  <rect width="1200" height="630" fill="url(#orb2)"/>
+
+  <!-- Logo W mark -->
+  <g transform="translate(80, 62)">
+    <rect width="36" height="36" rx="8" fill="#378ADD" opacity="0.9"/>
+    <text x="18" y="26" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="20" font-weight="800" fill="white">W</text>
+  </g>
+  <text x="126" y="88" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="24" font-weight="700" fill="white" opacity="0.9">WorklineIQ</text>
+
+  <!-- Headline -->
+  <text x="80" y="200" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="64" font-weight="900" fill="white" letter-spacing="-2">Field to office,</text>
+  <text x="80" y="275" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="64" font-weight="900" fill="#7EC8F4" letter-spacing="-2" font-style="normal">without the mess.</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="330" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="22" font-weight="500" fill="white" opacity="0.6">One platform for crews to log production and the office to approve</text>
+  <text x="80" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="22" font-weight="500" fill="white" opacity="0.6">and bill. No paper. No spreadsheets. No chasing.</text>
+
+  <!-- Industry tags -->
+  <g transform="translate(80, 410)">
+    <!-- Water & Utility -->
+    <rect x="0" y="0" width="148" height="38" rx="19" fill="rgba(126,200,244,0.15)" stroke="rgba(126,200,244,0.3)" stroke-width="1"/>
+    <text x="74" y="25" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="14" font-weight="700" fill="#7EC8F4">Water &amp; Utility</text>
+
+    <!-- Fiber & Telecom -->
+    <rect x="162" y="0" width="158" height="38" rx="19" fill="rgba(126,200,244,0.15)" stroke="rgba(126,200,244,0.3)" stroke-width="1"/>
+    <text x="241" y="25" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="14" font-weight="700" fill="#7EC8F4">Fiber &amp; Telecom</text>
+
+    <!-- HVAC -->
+    <rect x="334" y="0" width="78" height="38" rx="19" fill="rgba(126,200,244,0.15)" stroke="rgba(126,200,244,0.3)" stroke-width="1"/>
+    <text x="373" y="25" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="14" font-weight="700" fill="#7EC8F4">HVAC</text>
+
+    <!-- Plumbing -->
+    <rect x="426" y="0" width="112" height="38" rx="19" fill="rgba(126,200,244,0.15)" stroke="rgba(126,200,244,0.3)" stroke-width="1"/>
+    <text x="482" y="25" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="14" font-weight="700" fill="#7EC8F4">Plumbing</text>
+
+    <!-- Electrical -->
+    <rect x="552" y="0" width="112" height="38" rx="19" fill="rgba(126,200,244,0.15)" stroke="rgba(126,200,244,0.3)" stroke-width="1"/>
+    <text x="608" y="25" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="14" font-weight="700" fill="#7EC8F4">Electrical</text>
+  </g>
+
+  <!-- URL -->
+  <text x="1120" y="590" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" font-size="18" font-weight="600" fill="white" opacity="0.35">worklineiq.com</text>
+</svg>
